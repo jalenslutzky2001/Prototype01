@@ -18,6 +18,7 @@ namespace StarterAssets
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
+
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
 
@@ -387,6 +388,11 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+             SprintSpeed = 8f;
         }
     }
 }
