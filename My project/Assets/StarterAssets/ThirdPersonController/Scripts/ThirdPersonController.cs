@@ -392,7 +392,10 @@ namespace StarterAssets
 
         private void OnCollisionEnter(Collision collision)
         {
-             SprintSpeed = 8f;
+             if (collision.gameObject.tag == "Pickup")
+             {
+                SprintSpeed += 8f;
+             }
         }
     }
 }
